@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yangyuzhe998.github.io/changxing/sitemap.xml 
