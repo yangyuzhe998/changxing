@@ -3,20 +3,28 @@ body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: #ffb300;
+    --secondary-color: #ff9800;
+    --dark-color: #2c3e50;
+    --light-color: #f8f9fa;
 }
 
 /* 导航栏样式 */
 .navbar {
     padding: 1rem 0;
-    background: linear-gradient(to right, #1a1a1a, #333) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #2c3e50, #3d5a80) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .navbar-brand {
     font-size: 1.8rem; /* 增大品牌名称 */
     font-weight: bold;
-    color: #ffd700 !important;
+    color: var(--primary-color) !important;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -27,27 +35,57 @@ body {
     margin: 0 0.2rem;
     transition: all 0.3s ease;
     border-radius: 5px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .nav-link:hover {
-    color: #ffd700 !important;
-    background: rgba(255, 215, 0, 0.1);
-    transform: translateY(-2px);
+    color: var(--primary-color) !important;
+}
+
+.nav-link:hover::after {
+    width: 70%;
 }
 
 /* 首页横幅 */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/excavators.jpg');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
     padding-top: 76px;
-    position: relative;
     overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/excavators.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    will-change: transform;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-section::after {
@@ -62,26 +100,26 @@ body {
 }
 
 .hero-section h1 {
-    font-size: 4rem; /* 增大标题 */
+    font-size: 4.5rem; /* 增大标题 */
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: fadeInDown 1s ease;
+    animation: fadeInDown 1.2s ease;
 }
 
 .hero-section p {
     font-size: 2.4rem; /* 增大副标题 */
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: #ffd700;
+    color: var(--primary-color);
     font-weight: bold;
     letter-spacing: 2px;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1.2s ease;
 }
 
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-50px);
     }
     to {
         opacity: 1;
@@ -92,7 +130,7 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
     }
     to {
         opacity: 1;
@@ -101,32 +139,44 @@ body {
 }
 
 .hero-section .btn-primary {
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    background-color: #ffd700;
-    border-color: #ffd700;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     color: #333;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(255, 179, 0, 0.4);
+    animation: fadeIn 2s ease;
 }
 
 .hero-section .btn-primary:hover {
-    background-color: #ffed4a;
-    border-color: #ffed4a;
-    transform: translateY(-2px);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 179, 0, 0.5);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* 通用区块样式 */
 .section {
-    padding: 5rem 0;
+    padding: 7rem 0;
+    position: relative;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: #333;
+    margin-bottom: 3.5rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
 }
 
 .section-title::after {
@@ -135,9 +185,10 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: #ffd700;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 /* 关于我们 */
@@ -146,20 +197,49 @@ body {
     padding: 0;
 }
 
-.about-features li {
+/* 关于我们介绍文字 */
+#about p:first-of-type {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #333;
     margin-bottom: 1.5rem;
-    padding-left: 2.5rem;
+    text-align: justify;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.about-features li {
+    margin-bottom: 1.8rem;
+    padding-left: 2.8rem;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
 .about-features li:before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #ffd700;
+    color: var(--primary-color);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    background: rgba(255, 179, 0, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.about-features li:hover {
+    transform: translateX(5px);
+}
+
+.about-features li:hover:before {
+    background: var(--primary-color);
+    color: white;
 }
 
 /* 服务卡片 */
@@ -167,24 +247,26 @@ body {
     background: white;
     padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
     text-align: center;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .service-card h3 {
-    color: #333;
+    color: var(--dark-color);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
 }
 
 .service-card p {
-    color: #666;
+    color: #555;
     font-size: 1.1rem;
 }
 
@@ -211,27 +293,27 @@ body {
 }
 
 .contact-form .form-control:focus {
-    border-color: #ffd700;
-    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 179, 0, 0.25);
     transform: translateY(-2px);
 }
 
 .contact-form button {
-    background-color: #ffd700;
-    border-color: #ffd700;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     color: #333;
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
     font-weight: bold;
     transition: all 0.3s ease;
-    border-radius: 8px;
+    border-radius: 50px;
 }
 
 .contact-form button:hover {
-    background-color: #ffed4a;
-    border-color: #ffed4a;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 179, 0, 0.3);
 }
 
 .contact-info {
@@ -239,21 +321,22 @@ body {
     background: white;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     margin-bottom: 2rem;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .contact-info:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .contact-info h3 {
-    color: #333;
+    color: var(--dark-color);
     margin-bottom: 2rem;
-    font-size: 2rem;
     position: relative;
     padding-bottom: 1rem;
+    text-align: center;
 }
 
 .contact-info h3::after {
@@ -262,66 +345,63 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 60px;
     height: 3px;
-    background-color: #ffd700;
+    background-color: var(--primary-color);
+    border-radius: 2px;
 }
 
 .contact-info p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: #666;
+    color: #444;
 }
 
-/* 页脚 */
 .footer {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    background: linear-gradient(to right, #2c3e50, #3d5a80) !important;
     text-align: center;
-    background: linear-gradient(to right, #1a1a1a, #333) !important;
 }
 
-/* 响应式调整 */
 @media (max-width: 768px) {
     .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
-    
+
     .hero-section p {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
-    
+
     .section {
-        padding: 3rem 0;
+        padding: 4rem 0;
     }
-    
+
     .section-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }
 
-/* 关于我们图片样式 */
 .about-images {
     margin-top: 2rem;
 }
 
 .license-img {
-    max-width: 80%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .training-img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* 视频容器样式 */
 .video-container {
     position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 比例 */
-    margin: 0 auto;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .video-container video {
@@ -330,33 +410,32 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 确保视频填充整个容器 */
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
 }
 
 .video-card {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    height: 100%;
     transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .video-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .video-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 1.8rem;
     position: relative;
     padding-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
 }
 
 .video-card h3::after {
@@ -365,14 +444,124 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 60px;
     height: 3px;
-    background-color: #ffd700;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
-.video-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
+/* 添加滚动显示动画 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 视差分隔区 */
+.parallax-divider {
+    position: relative;
+    height: 350px; /* 增加高度 */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.parallax-bg-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* 增大背景图高度比例 */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/training-site.jpg');
+    background-size: 110% auto; /* 放大背景图片 */
+    background-position: center top; /* 调整位置显示上半部分 */
+    z-index: -1;
+}
+
+/* 静态背景版本 - 适用于所有区域 */
+.static-bg .parallax-bg,
+.static-bg .parallax-bg-divider,
+.static-bg .parallax-bg-contact {
+    will-change: auto;
+    transform: none !important; /* 禁用变换 */
+    background-attachment: scroll; /* 使用固定背景 */
+}
+
+.parallax-divider .content-wrapper {
     text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.parallax-divider h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1.5s ease;
+    color: #ffd54f; /* 金黄色标题 */
+    font-weight: 700;
+}
+
+.parallax-divider p {
+    font-size: 1.5rem;
+    color: #ffc107; /* 更亮更明显的金黄色 */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* 加强阴影 */
+    font-weight: 700; /* 增加粗细 */
+    letter-spacing: 1px; /* 增加字间距 */
+    background-color: rgba(0, 0, 0, 0.4); /* 添加半透明背景 */
+    padding: 8px 15px; /* 增加内边距 */
+    border-radius: 4px; /* 圆角 */
+    display: inline-block; /* 使背景色只覆盖文字区域 */
+}
+
+/* 联系区视差效果 */
+.parallax-contact {
+    position: relative;
+    overflow: hidden;
+    padding: 7rem 0; /* 增加内边距 */
+}
+
+.parallax-bg-contact {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* 增大背景图高度比例 */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/excavators.jpg');
+    background-size: 110% auto; /* 放大背景图片 */
+    background-position: center 30%; /* 调整位置更好地显示人脸区域 */
+    z-index: -1;
+    will-change: transform;
+}
+
+.parallax-contact .section-title {
+    color: white;
+}
+
+.parallax-contact .section-title::after {
+    background: linear-gradient(to right, white, var(--primary-color));
+}
+
+/* 视差效果的元素 */
+.parallax-element {
+    will-change: transform;
+}
+
+/* 静态图片 - 移除所有图片悬停效果 */
+.static-img {
+    transition: none !important;
+    transform: none !important;
+    will-change: auto;
+}
+
+.static-img:hover {
+    transform: none !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }

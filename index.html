@@ -10,7 +10,10 @@
     <meta name="robots" content="index, follow">
     <meta name="baidu-site-verification" content="验证码待添加">
     <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="styles.css" rel="stylesheet">
+    <!-- 预加载关键图片 -->
+    <link rel="preload" href="images/excavators.jpg" as="image">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -32,10 +35,11 @@
     </nav>
 
     <!-- 首页横幅 -->
-    <section id="home" class="hero-section">
-        <div class="container">
+    <section id="home" class="hero-section static-bg">
+        <div class="parallax-bg"></div>
+        <div class="container content-wrapper">
             <h1>长兴挖掘机培训机构</h1>
-            <p>月入过万不是梦</p>
+            <p>专业培训 · 技能提升 · 高薪就业</p>
             <a href="#contact" class="btn btn-primary btn-lg">立即咨询</a>
         </div>
     </section>
@@ -43,25 +47,32 @@
     <!-- 关于我们 -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">关于我们</h2>
+            <h2 class="section-title fade-in">关于我们</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <p>我们是一家专业的挖掘机技术培训机构，我们拥有专业的培训经验和专业的教学团队。我们注重实践训练让其在大量的实践中，培训出最实用最专业的技能，帮助各位学员快速掌握挖掘机专业技能，让其拥有月入过万的能力。</p>
+                <div class="col-md-6 fade-in">
+                    <p>我们是专注于挖掘机技术人才培养的专业机构，始终秉持"以人为本，技能为先"的教育理念。凭借资深的教学团队与先进的培训设备，我们为每位学员提供个性化的学习方案与实操指导。通过理论与实践的完美结合，帮助学员系统掌握挖掘机操作技能，顺利通过各类专业认证，为您打开高薪稳定的职业发展之路。</p>
                     <div class="about-images">
-                        <img src="images/license.jpg" alt="营业执照" class="img-fluid mb-3 license-img">
+                        <img loading="lazy" src="images/license.jpg" alt="营业执照" class="img-fluid mb-3 license-img static-img">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 fade-in">
                     <ul class="about-features">
-                        <li>专业的培训团队</li>
-                        <li>实践为主的教学模式</li>
-                        <li>一对一指导</li>
-                        <li>就业推荐服务</li>
+                        <li><i class="fas fa-check-circle me-2"></i>专业的培训团队</li>
+                        <li><i class="fas fa-check-circle me-2"></i>实践为主的教学模式</li>
+                        <li><i class="fas fa-check-circle me-2"></i>一对一指导</li>
+                        <li><i class="fas fa-check-circle me-2"></i>就业推荐服务</li>
                     </ul>
                     <div class="about-images">
-                        <img src="images/training-site.jpg" alt="培训场地" class="img-fluid training-img">
+                        <img loading="lazy" src="images/training-site.jpg" alt="培训场地" class="img-fluid training-img static-img">
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="parallax-divider static-bg">
+            <div class="parallax-bg-divider"></div>
+            <div class="content-wrapper">
+                <h3>专注技术传承 · 二十载精益求精</h3>
+                <p>培育行业精英 · 成就稳健人生</p>
             </div>
         </div>
     </section>
@@ -69,11 +80,11 @@
     <!-- 培训课程 -->
     <section id="services" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">培训介绍</h2>
+            <h2 class="section-title fade-in">培训介绍</h2>
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-10 fade-in">
                     <div class="video-card">
-                        <h3>实训场地展示</h3>
+                        <h3><i class="fas fa-play-circle me-2"></i>实训场地展示</h3>
                         <div class="video-container">
                             <video controls 
                                 preload="metadata">
@@ -89,14 +100,18 @@
 
     <!-- 联系我们 -->
     <section id="contact" class="section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="contact-info text-center">
-                        <h3>联系方式</h3>
-                        <p>电话1：138-3653-6666</p>
-                        <p>电话2：139-4583-9383</p>
-                        <p>地址：黑龙江省鸡西市鸡冠区新发小镇</p>
+        <div class="parallax-contact static-bg">
+            <div class="parallax-bg-contact"></div>
+            <div class="container content-wrapper">
+                <h2 class="section-title fade-in text-white">联系我们</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 fade-in">
+                        <div class="contact-info text-center">
+                            <h3><i class="fas fa-address-card me-2"></i>联系方式</h3>
+                            <p><i class="fas fa-phone me-2"></i>电话1：138-3653-6666</p>
+                            <p><i class="fas fa-phone me-2"></i>电话2：139-4583-9383</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>地址：黑龙江省鸡西市鸡冠区新发小镇</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,10 +121,83 @@
     <!-- 页脚 -->
     <footer class="footer bg-dark text-white">
         <div class="container">
-            <p>&copy; 2024 长兴挖掘机培训机构 版权所有</p>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2024 长兴挖掘机培训机构 版权所有</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>专业挖掘机培训 · 助您成就挖掘人生</p>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // 页面加载优化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 滚动动画
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // 注释掉全部视差滚动效果
+            /*
+            // 视差滚动效果
+            const handleScroll = () => {
+                const scrolled = window.scrollY;
+                
+                // 首页背景视差
+                const parallaxBg = document.querySelector('.parallax-bg');
+                if (parallaxBg) {
+                    parallaxBg.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+                }
+                
+                // 联系我们区域视差
+                const parallaxContact = document.querySelector('.parallax-bg-contact');
+                if (parallaxContact) {
+                    const contactOffset = parallaxContact.offsetTop;
+                    const contactParallax = (scrolled - contactOffset) * 0.3;
+                    if (scrolled > contactOffset - window.innerHeight && scrolled < contactOffset + window.innerHeight) {
+                        parallaxContact.style.transform = 'translateY(' + contactParallax + 'px)';
+                    }
+                }
+                
+                // 单独元素视差
+                document.querySelectorAll('.parallax-element').forEach(element => {
+                    const speed = element.getAttribute('data-parallax-speed') || 0.2;
+                    const elementOffset = element.offsetTop;
+                    const elementParallax = (scrolled - elementOffset) * speed;
+                    if (scrolled > elementOffset - window.innerHeight && scrolled < elementOffset + window.innerHeight) {
+                        element.style.transform = 'translateY(' + elementParallax + 'px)';
+                    }
+                });
+            };
+            
+            // 节流函数优化滚动事件性能
+            let lastScrollTime = 0;
+            window.addEventListener('scroll', function() {
+                const now = Date.now();
+                if (now - lastScrollTime > 10) { // 10ms节流
+                    lastScrollTime = now;
+                    window.requestAnimationFrame(handleScroll);
+                }
+            });
+            */
+        });
+    </script>
 </body>
 </html>
