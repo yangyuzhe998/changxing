@@ -1,0 +1,6 @@
+@echo off
+echo 正在向百度推送网站URL...
+curl -H "Content-Type:text/plain" --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://www.kaijuyuan.xin&token=f0v0BH6GTRfh1nGH"
+echo.
+echo 推送完成，按任意键继续...
+pause > nul 
