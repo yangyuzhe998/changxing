@@ -365,11 +365,11 @@ body {
 
 @media (max-width: 768px) {
     .hero-section h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .hero-section p {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .section {
@@ -378,6 +378,149 @@ body {
 
     .section-title {
         font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* 导航栏在移动端的优化 */
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    /* 首页按钮在移动端的优化 */
+    .hero-section .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    /* 联系信息在移动端的优化 */
+    .contact-info p {
+        font-size: 1rem;
+    }
+    
+    /* 分隔区在移动端的优化 */
+    .parallax-divider h3 {
+        font-size: 1.8rem;
+    }
+    
+    .parallax-divider p {
+        font-size: 1.2rem;
+    }
+    
+    /* 图片和视频容器在移动端的优化 */
+    .video-card {
+        padding: 1.5rem;
+    }
+    
+    .about-images img {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* 提高所有可点击元素的触摸区域 */
+    .nav-link, .btn, a[href^="tel:"] {
+        padding: 10px !important;
+    }
+    
+    /* 优化触摸反馈 */
+    a:active, button:active, .btn:active {
+        transform: scale(0.97);
+        transition: transform 0.1s ease;
+    }
+    
+    /* 增大表单元素尺寸 */
+    input, select, textarea, button {
+        font-size: 16px !important; /* 防止iOS自动缩放 */
+        height: auto !important;
+        padding: 12px !important;
+    }
+    
+    /* 确保内容不会被工具栏遮挡 */
+    .section:last-of-type {
+        margin-bottom: 20px;
+    }
+    
+    /* 改进视频控件在移动设备上的尺寸 */
+    video::-webkit-media-controls-panel {
+        padding: 0 5px;
+    }
+    
+    /* 图片优化 */
+    .about-images img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* 修复iOS中固定导航栏的问题 */
+    .navbar {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    
+    /* 联系电话按钮样式调整 */
+    .contact-phone-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .phone-number {
+        font-size: 1.1rem;
+        padding: 8px 15px;
+    }
+}
+
+/* 小屏幕手机适配 */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    
+    .parallax-divider h3 {
+        font-size: 1.5rem;
+    }
+    
+    .parallax-divider p {
+        font-size: 1rem;
+    }
+    
+    .hero-section {
+        height: 90vh;
+    }
+    
+    .hero-section .btn-primary {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .video-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* 处理横屏模式 */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        height: 120vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-section .btn-primary {
+        padding: 0.5rem 1.5rem;
     }
 }
 
@@ -564,4 +707,72 @@ body {
 .static-img:hover {
     transform: none !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 联系电话样式优化 */
+.contact-phone-numbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.contact-phone-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #333 !important;
+    padding: 12px 25px;
+    margin: 10px 0;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 179, 0, 0.3);
+    width: 80%;
+}
+
+.contact-phone-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+}
+
+.contact-phone-btn i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+/* 首页电话号码 */
+.contact-numbers {
+    margin-top: 20px;
+}
+
+.phone-number {
+    font-size: 1.3rem;
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    animation: fadeIn 2s ease;
+}
+
+.phone-number a {
+    text-decoration: none;
+    color: var(--primary-color) !important;
+    font-weight: bold;
+}
+
+/* 媒体查询调整 */
+@media (max-width: 768px) {
+    .contact-phone-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .phone-number {
+        font-size: 1.1rem;
+        padding: 8px 15px;
+    }
 }

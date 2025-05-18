@@ -2,25 +2,88 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>长兴挖掘机培训机构 - 专业的挖掘机培训中心</title>
     <meta name="description" content="长兴挖掘机培训机构提供专业的挖掘机技术培训，实践为主的教学模式，一对一指导，帮助学员快速掌握挖掘机专业技能，实现月入过万。">
     <meta name="keywords" content="挖掘机培训,长兴挖掘机,挖掘机学习,挖掘机技术,挖掘机就业,黑龙江挖掘机培训">
     <meta name="author" content="长兴挖掘机培训机构">
     <meta name="robots" content="index, follow">
     <meta name="baidu-site-verification" content="验证码待添加">
+    <!-- 添加PWA相关meta标签 -->
+    <meta name="theme-color" content="#ffb300">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- DNS预取,提前解析第三方域名 -->
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="images/excavators.jpg" as="image">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
     <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="styles.css" rel="stylesheet">
-    <!-- 预加载关键图片 -->
-    <link rel="preload" href="images/excavators.jpg" as="image">
+    
+    <!-- 关键CSS内联 -->
+    <style>
+    /* 关键路径CSS内联,减少页面闪烁 */
+    .navbar {
+        padding: 1rem 0;
+        background: linear-gradient(to right, #2c3e50, #3d5a80) !important;
+    }
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+    /* 固定联系浮动按钮 */
+    .floating-contact {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        text-decoration: none;
+        font-size: 24px;
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 179, 0, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 179, 0, 0);
+        }
+    }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">长兴挖掘机培训机构</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#">长兴挖掘机培训</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="展开导航菜单">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,6 +104,9 @@
             <h1>长兴挖掘机培训机构</h1>
             <p>专业培训 · 技能提升 · 高薪就业</p>
             <a href="#contact" class="btn btn-primary btn-lg">立即咨询</a>
+            <div class="contact-numbers mt-4">
+                <p class="phone-number">电话咨询: <a href="tel:13836536666" class="text-white fw-bold">138-3653-6666</a></p>
+            </div>
         </div>
     </section>
 
@@ -52,7 +118,7 @@
                 <div class="col-md-6 fade-in">
                     <p>我们是专注于挖掘机技术人才培养的专业机构，始终秉持"以人为本，技能为先"的教育理念。凭借资深的教学团队与先进的培训设备，我们为每位学员提供个性化的学习方案与实操指导。通过理论与实践的完美结合，帮助学员系统掌握挖掘机操作技能，顺利通过各类专业认证，为您打开高薪稳定的职业发展之路。</p>
                     <div class="about-images">
-                        <img loading="lazy" src="images/license.jpg" alt="营业执照" class="img-fluid mb-3 license-img static-img">
+                        <img loading="lazy" src="images/license.jpg" alt="营业执照" class="img-fluid mb-3 license-img static-img" width="400" height="300">
                     </div>
                 </div>
                 <div class="col-md-6 fade-in">
@@ -63,7 +129,7 @@
                         <li><i class="fas fa-check-circle me-2"></i>就业推荐服务</li>
                     </ul>
                     <div class="about-images">
-                        <img loading="lazy" src="images/training-site.jpg" alt="培训场地" class="img-fluid training-img static-img">
+                        <img loading="lazy" src="images/training-site.jpg" alt="培训场地" class="img-fluid training-img static-img" width="400" height="300">
                     </div>
                 </div>
             </div>
@@ -87,7 +153,9 @@
                         <h3><i class="fas fa-play-circle me-2"></i>实训场地展示</h3>
                         <div class="video-container">
                             <video controls 
-                                preload="metadata">
+                                preload="none"
+                                poster="images/training-site.jpg"
+                                playsinline>
                                 <source src="videos/training-scene.mp4" type="video/mp4">
                                 您的浏览器不支持视频播放。
                             </video>
@@ -108,9 +176,15 @@
                     <div class="col-md-8 fade-in">
                         <div class="contact-info text-center">
                             <h3><i class="fas fa-address-card me-2"></i>联系方式</h3>
-                            <p><i class="fas fa-phone me-2"></i>电话1：138-3653-6666</p>
-                            <p><i class="fas fa-phone me-2"></i>电话2：139-4583-9383</p>
-                            <p><i class="fas fa-map-marker-alt me-2"></i>地址：黑龙江省鸡西市鸡冠区新发小镇</p>
+                            <div class="contact-phone-numbers">
+                                <a href="tel:13836536666" class="contact-phone-btn">
+                                    <i class="fas fa-phone me-2"></i>电话1：138-3653-6666
+                                </a>
+                                <a href="tel:13945839383" class="contact-phone-btn">
+                                    <i class="fas fa-phone me-2"></i>电话2：139-4583-9383
+                                </a>
+                            </div>
+                            <p class="mt-4"><i class="fas fa-map-marker-alt me-2"></i>地址：黑龙江省鸡西市鸡冠区新发小镇</p>
                         </div>
                     </div>
                 </div>
@@ -118,22 +192,30 @@
         </div>
     </section>
 
+    <!-- 浮动联系按钮 -->
+    <div class="floating-contact">
+        <a href="tel:13836536666" class="contact-btn" title="电话咨询">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
     <!-- 页脚 -->
     <footer class="footer bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p>&copy; 2024 长兴挖掘机培训机构 版权所有</p>
+                    <p>&copy; 2025 长兴挖掘机培训机构 版权所有</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p>专业挖掘机培训 · 助您成就挖掘人生</p>
+                    <p>专业技能培训 · 成就精彩未来</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 延迟加载非关键JS -->
+    <script defer src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
     <script>
         // 页面加载优化
         document.addEventListener('DOMContentLoaded', function() {
@@ -153,50 +235,61 @@
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
-
-            // 注释掉全部视差滚动效果
-            /*
-            // 视差滚动效果
-            const handleScroll = () => {
-                const scrolled = window.scrollY;
-                
-                // 首页背景视差
-                const parallaxBg = document.querySelector('.parallax-bg');
-                if (parallaxBg) {
-                    parallaxBg.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
-                }
-                
-                // 联系我们区域视差
-                const parallaxContact = document.querySelector('.parallax-bg-contact');
-                if (parallaxContact) {
-                    const contactOffset = parallaxContact.offsetTop;
-                    const contactParallax = (scrolled - contactOffset) * 0.3;
-                    if (scrolled > contactOffset - window.innerHeight && scrolled < contactOffset + window.innerHeight) {
-                        parallaxContact.style.transform = 'translateY(' + contactParallax + 'px)';
-                    }
-                }
-                
-                // 单独元素视差
-                document.querySelectorAll('.parallax-element').forEach(element => {
-                    const speed = element.getAttribute('data-parallax-speed') || 0.2;
-                    const elementOffset = element.offsetTop;
-                    const elementParallax = (scrolled - elementOffset) * speed;
-                    if (scrolled > elementOffset - window.innerHeight && scrolled < elementOffset + window.innerHeight) {
-                        element.style.transform = 'translateY(' + elementParallax + 'px)';
+            
+            // 移动端导航栏点击后自动收起
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 992) {
+                        // 等待Bootstrap JS加载完成
+                        if (typeof bootstrap !== 'undefined') {
+                            bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+                        } else {
+                            navbarCollapse.classList.remove('show');
+                        }
                     }
                 });
-            };
-            
-            // 节流函数优化滚动事件性能
-            let lastScrollTime = 0;
-            window.addEventListener('scroll', function() {
-                const now = Date.now();
-                if (now - lastScrollTime > 10) { // 10ms节流
-                    lastScrollTime = now;
-                    window.requestAnimationFrame(handleScroll);
-                }
             });
-            */
+
+            // 图片延迟加载
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.src = img.getAttribute('src');
+                });
+            } else {
+                // 回退方案
+                const script = document.createElement('script');
+                script.src = 'https://cdn.bootcdn.net/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+                document.body.appendChild(script);
+            }
+            
+            // 检测网络状况，为慢网络优化
+            if (navigator.connection && navigator.connection.effectiveType) {
+                const networkSpeed = navigator.connection.effectiveType;
+                if (networkSpeed === 'slow-2g' || networkSpeed === '2g' || networkSpeed === '3g') {
+                    // 降低图片质量
+                    document.querySelectorAll('img').forEach(img => {
+                        if (img.src.indexOf('?quality=') === -1) {
+                            img.src = img.src + '?quality=low';
+                        }
+                    });
+                    
+                    // 移除或延迟加载一些非必要元素
+                    document.querySelectorAll('.video-container').forEach(container => {
+                        container.innerHTML = '<div class="text-center p-4">点击加载视频<br><button class="btn btn-sm btn-primary mt-2 load-video">加载</button></div>';
+                    });
+                    
+                    document.querySelectorAll('.load-video').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const container = this.closest('.video-container');
+                            container.innerHTML = '<video controls preload="none" poster="images/training-site.jpg" playsinline><source src="videos/training-scene.mp4" type="video/mp4">您的浏览器不支持视频播放。</video>';
+                        });
+                    });
+                }
+            }
         });
     </script>
 </body>
